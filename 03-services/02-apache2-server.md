@@ -60,10 +60,10 @@ sudo apt install git vim perl python2 python3 unzip ghostscript zlib1g zlib1g-de
 
 #instalando o Apache2 Server e PHP 8.x
 #opção da contra barra (\): criar uma quebra de linha no terminal
-sudo apt install apache2 apache2-utils apache2-bin apache2-data php8.1 php8.1-cli php8.1-common \
-php8.1-mysql php8.1-opcache php8.1-readline php8.1-common php8.1-bcmath php8.1-curl php8.1-intl \
-php8.1-mbstring php8.1-xml php8.1-zip php8.1-soap php-imagick php-json libapache2-mod-php libapr1 \
-libapache2-mod-php8.1 libaprutil1 libaprutil1-dbd-sqlite3 libaprutil1-ldap
+sudo apt install apache2 apache2-utils apache2-bin apache2-data php8.3 php8.3-cli php8.3-common \
+php8.3-mysql php8.3-opcache php8.3-readline php8.3-common php8.3-bcmath php8.3-curl php8.3-intl \
+php8.3-mbstring php8.3-xml php8.3-zip php8.3-soap php-imagick php-json libapache2-mod-php libapr1 \
+libapache2-mod-php8.3 libaprutil1 libaprutil1-dbd-sqlite3 libaprutil1-ldap
 ```
 
 #02_ Verificando o Serviço e Versão do Apache2 Server e do PHP<br>
@@ -104,7 +104,7 @@ sudo lsof -nP -iTCP:'80' -sTCP:LISTEN
 /etc/apache2/sites-available/  <-- Diretório padrão dos Sites Acessíveis do Apache 2 Server
 /etc/apache2/conf-available/   <-- Diretório padrão das Configurações Acessíveis do Apache 2 Server
 /etc/php/                      <-- Diretório de configuração do PHP 7.x ou 8.x
-/etc/php/8.1/apache2/php.ini   <-- Arquivo de configuração do PHP 8.x do Apache 2 Server
+/etc/php/8.3/apache2/php.ini   <-- Arquivo de configuração do PHP 8.x do Apache 2 Server
 /var/www/html/                 <-- Diretório padrão das Hospedagem de Site do Apache 2 Server
 /var/log/apache2/              <-- Diretório padrão dos Logs do Apache 2 Server
 ```
