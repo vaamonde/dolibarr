@@ -68,8 +68,8 @@ sudo chmod -v 777 /var/www/html/maqfrio/documents/
 https://172.16.1.20/maqfrio/install
 
 #nova instalação do Dolibarr
-Verificando pré-requisitos
-  Instalação/Atualização do Dolibarr
+Instalação/Atualização do Dolibarr
+  Verificando pré-requisitos
     Nova instalação <Iniciar>
 
 #iniciando a instalação do Dolibarr
@@ -77,7 +77,7 @@ DolibarrSetup - Arquivo de configuração
   Servidor web
     Diretório onde armazenar as páginas web: /var/www/html/maqfrio
     Diretório onde armazenar documentos enviados e/ou gerados: /var/www/html/maqfrio/documents
-    URL raiz: https://172.16.1.20/maqfrio 
+    URL raiz: https://192.168.15.250
     Forcar conexões seguras https: (ON) (ENABLE)
 
 Base de dados Dolibarr
@@ -88,7 +88,7 @@ Base de dados Dolibarr
   Prefixo da tabela de banco de dados: maq_
   Criar uma base de dados: (ON) (ENABLE)
   Iniciar Sessão: maqfrio
-  Senha: maqfrio
+  Senha: pti@2018
   Crie uma conta de usuário ou conceda permissão de conta de usuário no banco de dados Dolibarr: (ON) (ENABLE)
 
 Base de dados - Acesso Superuser
@@ -107,9 +107,9 @@ Instalação/Atualização do Dolibarr - Criação dos objetos na base de dados.
 
 Instalação/Atualização do Dolibarr - Criando login do Administrador
   Sessão Administrador Dolibarr
-  Iniciar Sessão: maqfrio2024
+  Iniciar Sessão: maqfrio
   Senha: maqfrio2024
-  Reescreva a sua senha: maqfrio
+  Reescreva a sua senha: maqfrio2024
 <Passo Seguinte>
 
 Instalação/Atualização do Dolibarr - Fim da Configuração
