@@ -52,20 +52,20 @@ sudo tar -zxvf /tmp/dolibarr.tgz
 cd dolibarr*/
 
 #copiando e alterando o nome do diretório do Dolibarr
-sudo cp -Rv htdocs/ /var/www/html/maqfrio
+sudo cp -Rv htdocs/ /var/www/html/vaamonde
 
 #copiando o arquivo de configuração do Dolibarr
-sudo cp -v /var/www/html/maqfrio/conf/conf.php.example /var/www/html/maqfrio/conf/conf.php
+sudo cp -v /var/www/html/vaamonde/conf/conf.php.example /var/www/html/vaamonde/conf/conf.php
 
 #alterando as permissões do arquivo de configuração do Dolibarr
-sudo chmod 666 -v /var/www/html/maqfrio/conf/conf.php
+sudo chmod 666 -v /var/www/html/vaamonde/conf/conf.php
 
 #criando o diretório de documentos do Dolibarr
-sudo mkdir -v /var/www/html/maqfrio/documents
-sudo chmod -v 777 /var/www/html/maqfrio/documents/
+sudo mkdir -v /var/www/html/vaamonde/documents
+sudo chmod -v 777 /var/www/html/vaamonde/documents/
 
 #instalação via Web
-https://172.16.1.20/maqfrio/install
+https://172.16.1.20/vaamonde/install
 
 #nova instalação do Dolibarr
 Instalação/Atualização do Dolibarr
@@ -75,19 +75,19 @@ Instalação/Atualização do Dolibarr
 #iniciando a instalação do Dolibarr
 DolibarrSetup - Arquivo de configuração
   Servidor web
-    Diretório onde armazenar as páginas web: /var/www/html/maqfrio
-    Diretório onde armazenar documentos enviados e/ou gerados: /var/www/html/maqfrio/documents
-    URL raiz: https://192.168.15.250
+    Diretório onde armazenar as páginas web: /var/www/html/vaamonde
+    Diretório onde armazenar documentos enviados e/ou gerados: /var/www/html/vaamonde/documents
+    URL raiz: https://172.16.1.20
     Forcar conexões seguras https: (ON) (ENABLE)
 
 Base de dados Dolibarr
-  Nome da Base de Dados: maqfrio
+  Nome da Base de Dados: vaamonde
   Tipo de Controlador: mysqli (MySQL or MariaDB >= 5.03)
   Servidor da Base de Dados: localhost
   Porta: 3306
   Prefixo da tabela de banco de dados: maq_
   Criar uma base de dados: (ON) (ENABLE)
-  Iniciar Sessão: maqfrio
+  Iniciar Sessão: vaamonde
   Senha: pti@2018
   Crie uma conta de usuário ou conceda permissão de conta de usuário no banco de dados Dolibarr: (ON) (ENABLE)
 
@@ -107,18 +107,20 @@ Instalação/Atualização do Dolibarr - Criação dos objetos na base de dados.
 
 Instalação/Atualização do Dolibarr - Criando login do Administrador
   Sessão Administrador Dolibarr
-  Iniciar Sessão: maqfrio
-  Senha: maqfrio2024
-  Reescreva a sua senha: maqfrio2024
+  Iniciar Sessão: vaamonde
+  Senha: vaamonde2024
+  Reescreva a sua senha: vaamonde2024
 <Passo Seguinte>
 
 Instalação/Atualização do Dolibarr - Fim da Configuração
 <Ir para a área de configuração>
 
-
-
 #bloqueando a reinstalação do Dolibarr
-sudo touch /var/www/html/maqfrio/documents/install.lock
+sudo touch /var/www/html/vaamonde/documents/install.lock
 
 #alterando as permissões do arquivo Conf do Dolibarr
-sudo chmod 440 -v /var/www/html/maqfrio/conf/conf.php
+sudo chmod 440 -v /var/www/html/vaamonde/conf/conf.php
+
+mysqldump -u root -ppti@2018 -l --single-transaction -K --add-drop-table=TRUE --tables -c -e --hex-blob --default-character-set=utf8 --result-file=vaamonde-17102024.sql vaamonde
+
+sudo mount -t cifs -o username=vaamonde,password=vaamonde //172.16.1.25/vaamonde /backup/
