@@ -119,7 +119,7 @@ Instalação/Atualização do Dolibarr - Fim da Configuração
 sudo touch /var/www/html/vaamonde/documents/install.lock
 
 #alterando as permissões do arquivo Conf do Dolibarr
-sudo chmod 440 -v /var/www/html/vaamonde/conf/conf.php
+sudo chmod 644 -v /var/www/html/vaamonde/conf/conf.php
 
 mysqldump -u root -ppti@2018 -l --single-transaction -K --add-drop-table=TRUE --tables -c -e --hex-blob --default-character-set=utf8 --result-file=vaamonde-17102024.sql vaamonde
 
