@@ -121,6 +121,12 @@ sudo touch /var/www/html/vaamonde/documents/install.lock
 #alterando as permissões do arquivo Conf do Dolibarr
 sudo chmod 644 -v /var/www/html/vaamonde/conf/conf.php
 
+https://wiki.dolibarr.org/index.php?title=Backups
+
 mysqldump -u root -ppti@2018 -l --single-transaction -K --add-drop-table=TRUE --tables -c -e --hex-blob --default-character-set=utf8 --result-file=vaamonde-17102024.sql vaamonde
 
 sudo mount -t cifs -o username=vaamonde,password=vaamonde //172.16.1.25/vaamonde /backup/
+
+//172.16.1.25/maqfrio /backup cifs username=vaamonde,password=vaamonde,rw,iocharset=utf8,file_mode=0777,dir_mode=0777 0 0
+
+iocharset=utf8
